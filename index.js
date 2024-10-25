@@ -17,7 +17,7 @@ $(document).ready(function () {
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">${jelo.ime}</h5>
-                <button class="btn btn-success naruci-btn" data-id="${jelo.id}">Naruci</button>
+                  <button class="btn btn-success naruci-btn" data-id="${jelo.id}" data-name="${jelo.ime}">Naruci</button>
               </div>
             </div>
           </div>
@@ -66,6 +66,9 @@ $(document).ready(function () {
   // Narudžba jela sa jQuery animacijom
   $(document).on("click", ".naruci-btn", function () {
     let button = $(this);
+    let imeJela = button.data("name");
+
+    $("#imeJela").text(imeJela);
 
     button.animate(
       {
